@@ -14,8 +14,7 @@ loop do
   response = STDIN.gets.strip.downcase
   if 'yes'.start_with?(response)
     puts "okay! Running `git #{command}`"
-    puts `git #{command}`
-    exit
+    exec "git #{command}"
   elsif 'no'.start_with?(response)
     puts "Then I'm afraid I can't help you.\n"
     exit(-1)
